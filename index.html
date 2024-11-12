@@ -2,64 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
     <script src="https://kit.fontawesome.com/07d8b9c47e.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-      <span onclick="openNav()" id="menu" class="material-symbols-outlined"
-        >menu</span
-      >
-      <div><a
-        
-         id="login">log in</a>
-        </div>
+  <div class="container">
+    <div class="menu">
+      <i id="sideNavIco" onclick="openNav()" class="fa-solid fa-bars"></i>
     </div>
-
-    <div class="sideNav" id="sideNav">
+    <div class="sideNav">
       <p>Brows our games</p>
-      <br /><br />
-      <i class="fa-solid fa-house"></i>
-      <p id="games">Games</p>
-      <br />
+      <i id="gamepadIco" class="fa-solid fa-gamepad"></i>
       <div class="games">
-        <div class="div">
-          <img
-            class="gameimg"
-            src="https://www.yourdecoration.nl/cdn/shop/files/pyramid-pp34131-the-legend-of-zelda-breath-of-the-wild-sunset-poster-61x91-5cm_grande.jpg?v=1715338644"
-            alt=""
-          />
-          <p class="gameinfo">zelda</p>
+        <div class="gameCard">
+          <img class="gameimg" src="https://www.yourdecoration.nl/cdn/shop/files/pyramid-pp34971-playstation-the-last-of-us-poster-61x91-5cm_175x.jpg?v=1715337974" alt="">
+          <p class="gametxt"> The Last Of Us </p>
         </div>
-        <div class="div">
-          <img
-            class="gameimg"
-            src="https://www.yourdecoration.nl/cdn/shop/files/pyramid-pp34971-playstation-the-last-of-us-poster-61x91-5cm_175x.jpg?v=1715337974"
-            alt=""
-          />
-          <p class="gameinfo">The Last of Us</p>
-        </div>
-        <div class="div">
-          <img
-            class="gameimg"
-            src="https://images.wall-art.de/format:webp/q:92/rs:fit:780:/_img/out/pictures/master/product/1/122525.jpg"
-          />
-          <p class="gameinfo">Guardians of the Galaxy</p>
-        </div>
-        <div class="div">
-          <img
-            class="gameimg"
-            src="https://pbs.twimg.com/media/FeD319xWYAAW_KP?format=jpg&name=4096x4096"
-            alt="god of war"
-          />
-          <p class="gameinfo">God of War</p>
+        <div class="gameCard">
+          <img class="gameimg" src="https://images.wall-art.de/format:webp/q:92/rs:fit:780:/_img/out/pictures/master/product/1/122525.jpg" alt="">
+          <p class="gametxt"> Guardians Of the Galaxy </p>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+  
+</body>
 </html>
 
 <script>
