@@ -9,9 +9,20 @@ font-family: "Host Grotesk", sans-serif;
   padding: 30px;
   scale: 2;
   cursor: pointer;
+  color: white;
 }
 #sideNavTxt{
   font-size: 24px;
+}
+#profileIco{
+  padding: 30px;
+  scale: 2;
+  cursor: pointer;
+  color: white;
+}
+.menu{
+  display: flex;
+  justify-content: space-between;
 }
 .sideNav {
   display: grid;
@@ -63,18 +74,17 @@ font-family: "Host Grotesk", sans-serif;
   margin-bottom: 10px;
   border-radius: 10px;
   cursor: pointer;
-  
+  background-color: rgb(88, 63, 116);
 }
 .gameCard:hover{
-  transition: 0.3s;
+  transition: 0.3s ease;
   border-radius: 10px;
   border-style: solid;
-  border-color: rgb(108, 67, 152);
+  border-color: rgb(127, 67, 190);
   color: white;
 }
 .gametxt{
   font-size: 20px;
   text-align: center;
-  
   margin-top: 50px;
 }
