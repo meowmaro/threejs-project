@@ -10,12 +10,15 @@ font-family: "Host Grotesk", sans-serif;
   scale: 2;
   cursor: pointer;
 }
+#sideNavTxt{
+  font-size: 24px;
+}
 .sideNav {
   display: grid;
   background-color: rgb(70, 52, 99);
   width: 15%;
   gap: 10px;
-  margin-left: -250px; 
+  margin-left: -400px; 
   align-items: center;
   justify-content: center;
   grid-template-columns: 1fr;
@@ -58,6 +61,7 @@ font-family: "Host Grotesk", sans-serif;
   transition: 0.3s;
   padding: 10px;
   margin-bottom: 10px;
+  border-radius: 10px;
   cursor: pointer;
   
 }
