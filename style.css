@@ -18,9 +18,11 @@ background-color: rgb(53, 42, 63);
   text-align: center;
   height: 100hv;
   color: white;
+  transition: left 0.5s ease;
 }
 .open{
-
+transform: translateX(-250px);
+transition: left 0.5s ease;
 }
 #gamepadIco{
   scale: 3;
@@ -42,6 +44,7 @@ background-color: rgb(53, 42, 63);
   transition: 0.3s;
   padding: 10px;
   margin-bottom: 10px;
+  cursor: pointer;
   
 }
 .gameCard:hover{
