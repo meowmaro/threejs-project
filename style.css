@@ -17,6 +17,7 @@ font-family: "Host Grotesk", sans-serif;
   display: grid;
   background-color: rgb(70, 52, 99);
   width: 15%;
+  height: 85vh;
   gap: 10px;
   margin-left: -400px; 
   align-items: center;
@@ -24,7 +25,8 @@ font-family: "Host Grotesk", sans-serif;
   grid-template-columns: 1fr;
   text-align: center;
   color: white;
-  transition: margin-left 0.5s ease; 
+  transition: margin-left 0.5s ease;
+  border-radius: 25px;
 }
 
 .open {
@@ -32,14 +34,15 @@ font-family: "Host Grotesk", sans-serif;
   display: grid;
   background-color: rgb(70, 52, 99);
   width: 15%;
+  height: 85vh;
   gap: 10px;
   align-items: center;
   justify-content: center;
   grid-template-columns: 1fr;
   text-align: center;
-
   color: white;
   transition: margin-left 0.5s ease;
+  border-radius: 25px;
 }
 #gamepadIco{
   scale: 3;
