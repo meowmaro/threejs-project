@@ -1,3 +1,84 @@
-body{
-    background-color: darkgray;
-}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    padding: 10px;
+    background-color: rgb(68, 6, 97);
+    height: 50px;
+    width: 99%;
+    margin-left: -10px;
+    color: white;
+  }
+  p {
+    color: white;
+  }
+
+  #login {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  #logout {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  #menu {
+    cursor: pointer;
+  }
+
+  .sideNav {
+    width: 15%;
+    height: 94%;
+
+    margin-left: 5px;
+    align-items: center;
+    text-align: center;
+    display: block;
+    transform: translateX(-250px);
+    transition: 0.3s ease;
+  }
+  .open {
+    transform: translateX(0px);
+    transform: translateY(70px);
+    transition: 0.3s ease;
+    background-color: rgb(68, 6, 97);
+    width: 15%;
+    height: 94%;
+    margin-top: -20px;
+    margin-left: -10px;
+    align-items: center;
+    text-align: center;
+  }
+  .hidden {
+    display: none;
+  }
+
+  .gameimg {
+    width: 100px;
+    border-radius: 20px;
+    transition: 0.3;
+  }
+  .games {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .div {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    border-radius: 20px;
+    width: 190px;
+    height: 3fr;
+    background-color: rgb(98, 5, 126);
+    transition: 0.3s;
+  }
+  .div:hover {
+    scale: 1.1;
+    transition: 0.3s;
+  }
+  .gameinfo {
+    margin-left: 5px;
+  }
