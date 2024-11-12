@@ -6,23 +6,33 @@ background-color: rgb(53, 42, 63);
   scale: 2;
   cursor: pointer;
 }
-.sideNav{
+.sideNav {
   display: grid;
   background-color: rgb(70, 52, 99);
   width: 15%;
   gap: 10px;
-  margin-left: -10px;
+  margin-left: -250px; 
   align-items: center;
   justify-content: center;
-  grid-template-columns:  1fr;
+  grid-template-columns: 1fr;
   text-align: center;
-  height: 100hv;
   color: white;
-  transition: left 0.5s ease;
+  transition: margin-left 0.5s ease; 
 }
-.open{
-transform: translateX(-250px);
-transition: left 0.5s ease;
+
+.open {
+  margin-left: 0; 
+  display: grid;
+  background-color: rgb(70, 52, 99);
+  width: 15%;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  text-align: center;
+
+  color: white;
+  transition: margin-left 0.5s ease;
 }
 #gamepadIco{
   scale: 3;
