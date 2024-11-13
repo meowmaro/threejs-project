@@ -64,7 +64,7 @@ body{
 
 .profile{
     display: none;
-    transition: left 0.5s ease;
+    transition: 0.5s ease;
 }
 .openProfile{
     display: flex;
@@ -76,8 +76,9 @@ body{
     justify-content: flex-start;
     align-items: center;
     transform: translateX(0);
-    transition: left 0.5s ease;
+    transition: 0.5s ease;
 }
+
 .sideNav{
     color: white;
     padding: 10px;
