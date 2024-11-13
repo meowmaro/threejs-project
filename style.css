@@ -32,6 +32,9 @@ body{
 .box3{
     padding: 40px;
 }
+.box1, .box2, .box3{
+    border: 1px solid ;
+}
 .profIco{
     display: flex;
     justify-content: flex-end;
