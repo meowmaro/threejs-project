@@ -11,7 +11,10 @@ body{
     flex-direction: row;
     width: 100%;
     justify-content: space-evenly;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
     margin-bottom: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 #logo{
     margin-right: 80px;
@@ -63,8 +66,16 @@ body{
 }
 
 .profile{
-    display: none;
-    transition: left 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(57, 40, 74);
+    width: 25%;
+    color: white;
+    border-radius: 25px;
+    justify-content: flex-start;
+    align-items: center;
+    transform: translateX(500px);
+    transition: 0.5s ease;
 }
 .openProfile{
     display: flex;
@@ -75,8 +86,9 @@ body{
     border-radius: 25px;
     justify-content: flex-start;
     align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     transform: translateX(0);
-    transition: left 0.5s ease;
+    transition: 0.5s ease;
 }
 .sideNav{
     color: white;
@@ -95,6 +107,7 @@ body{
     background-color: rgb(57, 40, 74) ;    
     border-radius: 25px;
     text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     transform: translateX(0);
     transition: 0.5s ease;
 }
@@ -127,6 +140,8 @@ body{
     text-align: center;
     align-items: center;
     max-width: 50%;
+    
+    
 }
 .gameContent{
     display: flex;
@@ -137,6 +152,7 @@ body{
     color: white;
     flex-wrap: wrap;
     text-align: center;
+    
 }
 .game{
     display: flex;
@@ -145,6 +161,7 @@ body{
     height: 60vh;
     background-color: black;
     border: 2px solid rgb(80, 43, 108);
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
 }
 
 .beneathContainer{
