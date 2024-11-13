@@ -90,6 +90,7 @@ body{
     transform: translateX(0);
     transition: 0.5s ease;
 }
+
 .sideNav{
     color: white;
     padding: 10px;
