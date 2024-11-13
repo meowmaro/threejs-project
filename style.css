@@ -63,15 +63,8 @@ body{
 }
 
 .profile{
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(57, 40, 74);
-    width: 25%;
-    color: white;
-    justify-content: flex-start;
-    align-items: center;
-    transform: translateX(500px);
-    transition: 0.5s ease;
+    display: none;
+    transition: left 0.5s ease;
 }
 .openProfile{
     display: flex;
@@ -83,7 +76,7 @@ body{
     justify-content: flex-start;
     align-items: center;
     transform: translateX(0);
-    transition: 0.5s ease;
+    transition: left 0.5s ease;
 }
 .sideNav{
     color: white;
@@ -139,7 +132,6 @@ body{
     display: flex;
     flex-direction: column;
     width: 80%;
-    
     margin: 30px;
     justify-content: center;
     color: white;
