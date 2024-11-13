@@ -13,12 +13,14 @@ body{
     margin-bottom: 10px;
 }
 #logo{
+    display: grid;
+    justify-content: center;
+    margin: auto;
     width: 175px;
 }
  .box2{
     padding: 30px;
     margin: 10px;
-    border: 2px solid grey;
 }
 .box1{
     width: 10%;
