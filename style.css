@@ -1,174 +1,205 @@
 @import url("https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap");
 
-
 body{
-background-color: rgb(53, 42, 63);
-font-family: "Host Grotesk", sans-serif;
+    background-color: rgb(43, 26, 59);
+    font-family: "Host Grotesk", sans-serif;
 }
-
-#sideNavIco{
-  padding: 30px;
-  scale: 2;
-  cursor: pointer;
-  color: white;
+.headerContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
 }
-#sideNavTxt{
-  font-size: 24px;
+ .box2{
+    padding: 30px;
+    margin: 10px;
+    border: 2px solid grey;
+}
+.box1{
+    width: 10%;
+    padding: 40px;
+    color: white;
+}
+.box3{
+    padding: 30px;
+}
+.profIco{
+    display: flex;
+    justify-content: flex-end;
+}
+.box2{
+    width: 80%;
+}
+.box3{
+    background-color: rgb(43, 26, 59);
+    width: 10%;
+    color: white;
+}
+.mainContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 80vh;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+#menuIco{
+    scale: 1.5;
+    cursor: pointer;
 }
 #profileIco{
-  padding: 30px;
-  scale: 2;
-  cursor: pointer;
-  color: white;
-}
-.menu{
-  display: flex;
-  justify-content: space-between;
-}
-.sideNav {
-  display: grid;
-  background-color: rgb(70, 52, 99);
-  width: 15%;
-  gap: 10px;
-  margin-left: -400px; 
-  align-items: center;
-  justify-content: center;
-  grid-template-columns: 1fr;
-  text-align: center;
-  color: white;
-  transition: 0.5s ease; 
-  border-radius: 25px;
+    scale: 1.5;
+    cursor: pointer;
 }
 
-.open {
-  margin-left: 0; 
-  display: grid;
-  background-color: rgb(70, 52, 99);
-  width: 15%;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  grid-template-columns: 1fr;
-  text-align: center;
-  border-radius: 25px;
-  color: white;
-  transition: margin-left 0.5s ease;
-  min-width: 300px;
-  z-index: 10;
-}
-#gamepadIco{
-  scale: 3;
-}
-.games{
-  display: flex;
-  flex-direction: column;
-  margin-top: 50px;
-  width: 20%;
-}
-.gameimg{
-  width: 100%;
-  max-width: 100px;
-  border-radius: 10px;
-  
-}
-.gameCard{
-  display: grid;
-  grid-template-columns: auto 2fr;
-  position: relative;
-  width: 450%;
-  transition: 0.3s;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  cursor: pointer;
-  background-color: rgb(88, 63, 116);
-  min-width: 150px;
-}
-.gameCard:hover{
-  transition: 0.3s ease;
-  border-radius: 10px;
-  border-style: solid;
-  border-color: rgb(127, 67, 190);
-  color: white;
-}
-.gametxt{
-  font-size: 20px;
-  text-align: center;
-  margin-top: 50px;
-}
-.gameContent{
-  color: white;
-  display: flex; 
-  transform: translateY(-800px);
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-  z-index: -10;
-}
-#content{
-  display: flex;
-  background-color: black;
-  border: 2px solid grey;
-  align-items: center;
-  justify-content: center;
-  margin-top: 40px;
-  height: 50vh;
-  width: 800px;
-  min-width: 200px;
-}
-#aboutGame{
-  width: 500px;
-}
 .profile{
-  color: white;
-  display: flex;
-  position: fixed;
-  flex-direction: column;
-  background-color: rgb(70, 52, 99);
-  width: 300px;
-  right: 70px;
-  transform: translateX(600px);
-  align-items: center;
-  border-radius:25px;
-  height: 80vh;
-  z-index: 20;
-  transition: 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(57, 40, 74);
+    width: 25%;
+    color: white;
+    justify-content: flex-start;
+    align-items: center;
+    transform: translateX(500px);
+    transition: 0.5s ease;
 }
 .openProfile{
-  color: white;
-  display: flex;
-  position: fixed;
-  flex-direction: column;
-  background-color: rgb(70, 52, 99);
-  width: 300px;
-  right: 70px;
-  transform: translateX(60px);
-  align-items: center;
-  border-radius:25px;
-  height: 80vh;
-  z-index: 20;
-  transition: 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(57, 40, 74);
+    width: 25%;
+    color: white;
+    border-radius: 25px;
+    justify-content: flex-start;
+    align-items: center;
+    transform: translateX(0);
+    transition: 0.5s ease;
+}
+.sideNav{
+    color: white;
+    padding: 25px;
+    width: 20%;
+    background-color: rgb(57, 40, 74) ;    
+    border-radius: 25px;
+    text-align: center;
+    transform: translateX(-500px);
+    transition: 0.5s ease;
+}
+.open{
+    color: white;
+    padding: 25px;
+    width: 20%;
+    background-color: rgb(57, 40, 74) ;    
+    border-radius: 25px;
+    text-align: center;
+    transform: translateX(0);
+    transition: 0.5s ease;
+}
+#gamepadIco{
+    scale: 2;
+}
+.gameCard{
+    width: 100%;
+    margin-top: 20px;
+    background-color: rgb(80, 43, 108);
+    display: flex;
+    flex-direction: row;
+    height: 20%;
+    text-align: center;
+    transition: 0.3s ease;
+    border-radius: 10px;
+}
+.gameCard:hover{
+    scale: 1.1;
+    transition: 0.3s ease;
+    border: 1px solid rgb(139, 85, 181);
+}
+.gameimg{
+    width: 40%;
+    min-width: 20%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.gameInfo{
+    text-align: center;
+    align-items: center;
+    max-width: 50%;
+}
+.gameContent{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    
+    margin: 30px;
+    justify-content: center;
+    color: white;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.game{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-color: black;
+    border: 2px solid rgb(80, 43, 108);
 }
 
+.beneathContainer{
+    display: flex;
+    flex-direction: row;
+}
+.div1{
+    width: 20%;
+}
+.div3{
+    width: 20%;
 
+}
+.gameAbout{
+    display: flex;
+    color: white;
+    width: 65%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 
+}
 
-
+.btn{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 10px;
+}
 #googleBtn{
-  width: 100%;
-  height: 10%;
-  background-color:rgb(216, 216, 216) ;
-  border: 2px solid rgb(127, 67, 190);
-  border-radius: 10px;
-  z-index: 1;
-  pointer-events: auto; 
-  cursor: pointer;
-  height: 10vh;
-  font-size: large;
+    font-size: 15px;
+    width: 100%;
+    height: 50px;
+    max-width: 200px;
+    background-color: rgb(80, 43, 108);
+    border: 0;
+    color: white;
+    transition: 0.3s ease;
 }
-
-#googleIco{
-  scale: 1.3;
-  color: red;
-  margin-right: 10px;
+#googleBtn:hover{
+    border: 1px solid rgb(146, 91, 189);
+    scale: 1.1;
+    transition: 0.3s ease;
+}
+#facebookBtn{
+    font-size: 15px;
+    width: 100%;
+    height: 50px;
+    max-width: 200px;
+    background-color: rgb(80, 43, 108);
+    border: 0;
+    color: white;
+    transition: 0.3s ease;
+}
+#facebookBtn:hover{
+    border: 1px solid rgb(146, 91, 189);
+    scale: 1.1;
+    transition: 0.3s ease;
 }
