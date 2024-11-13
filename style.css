@@ -5,20 +5,22 @@ body{
     font-family: "Host Grotesk", sans-serif;
 }
 .headerContainer{
+    background-color: rgb(57, 40, 74) ;
     border-radius: 25px;
     display: flex;
     flex-direction: row;
-    width: 90%;
+    width: 100%;
     justify-content: space-evenly;
     margin-bottom: 10px;
 }
 #logo{
-    display: grid;
-    justify-content: center;
-    margin: auto;
+    margin-right: 80px;
     width: 175px;
 }
  .box2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 30px;
     margin: 10px;
 }
@@ -28,7 +30,7 @@ body{
     color: white;
 }
 .box3{
-    padding: 30px;
+    padding: 40px;
 }
 .profIco{
     display: flex;
@@ -39,7 +41,6 @@ body{
     width: 80%;
 }
 .box3{
-    background-color: rgb(43, 26, 59);
     width: 10%;
     color: white;
 }
@@ -158,7 +159,7 @@ body{
     flex-direction: row;
 }
 .div1{
-    width: 20%;
+    width: 18%;
 }
 .div3{
     width: 20%;
@@ -167,7 +168,7 @@ body{
 .gameAbout{
     display: flex;
     color: white;
-    width: 65%;
+    width: 60%;
     justify-content: center;
     text-align: center;
     align-items: center;
@@ -210,3 +211,26 @@ body{
     scale: 1.1;
     transition: 0.3s ease;
 }
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    width: 100%;
+    justify-content: space-between;
+    background-color: rgb(57, 40, 74);
+}
+.footer1, .footer2, .footer3, .footer4, .footer5{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    border: 1px solid grey;
+    margin: 10px;
+    height: 20vh;
+}
+.footer3{
+    width: 30%;
+}
+
