@@ -15,7 +15,14 @@
     
       <i id="sideNavIco" onclick="openNav()" class="fa-solid fa-bars"></i>
       <div>
-        <i id="profileIco" class="fa-solid fa-user"></i>
+        <i id="profileIco" onclick="openProfile()" class="fa-solid fa-user"></i>
+        <div id="profile" class="profile">
+          <h2>profile</h2>
+          <br>
+          <p> Sign in</p> 
+          <br>
+          <button id="googleBtn"> <i id="googleIco" class="fa-brands fa-google"></i> Sign in with Google</button>
+        </div>
       </div>
     </div>
     <div id="sideNav" class="sideNav">
@@ -41,7 +48,12 @@
       </div>
     </div>
     <div class="gameContent">
-      
+      <div>
+        <h1>Assassins Creed </h1>
+        <h1 id="content">(game)</h1>
+        <h3>About this game: </h3>
+        <p id="aboutGame"> Dive into intense first-person action with fast-paced gameplay and thrilling combat. Navigate through dynamic environments <br> using A, W, S, D to move and explore every corner of the battlefield. Engage your enemies with precision by using the mouse to aim, shoot, and look around, giving you complete control over your combat experience. Whether you're dodging bullets or taking out opponents from a distance, every moment will keep you on the edge of your seat. Prepare for action, and may the best shooter win!</p>
+      </div>
     </div>
   </div>
   
@@ -49,10 +61,16 @@
 </html>
 
 <script>
+  function openProfile() {
+    if (document.getElementById('profile').className === 'profile')
+      document.getElementById('profile').className = 'openProfile';
+    else document.getElementById('profile').classList = 'profile';
+  }
   function openNav() {
     if (document.getElementById('sideNav').className === 'sideNav')
       document.getElementById('sideNav').className = 'open';
-    else document.getElementById('sideNav').className = 'sideNav';
+    else document.getElementById('sideNav').classList = 'sideNav';
   }
+ 
 </script>
 
