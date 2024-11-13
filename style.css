@@ -5,6 +5,7 @@ body{
     font-family: "Host Grotesk", sans-serif;
 }
 .headerContainer{
+    border-radius: 25px;
     display: flex;
     flex-direction: row;
     width: 90%;
@@ -82,7 +83,7 @@ body{
 }
 .sideNav{
     color: white;
-    padding: 25px;
+    padding: 10px;
     width: 20%;
     background-color: rgb(57, 40, 74) ;    
     border-radius: 25px;
@@ -92,7 +93,7 @@ body{
 }
 .open{
     color: white;
-    padding: 25px;
+    padding: 10px;
     width: 20%;
     background-color: rgb(57, 40, 74) ;    
     border-radius: 25px;
