@@ -16,13 +16,20 @@ body{
     border-top-right-radius: 0;
     margin-bottom: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    margin-top: -10px;
+    height: 14vh;
 }
-#logo{
-    margin-right: 80px;
-    width: 175px;
+#logo2{
+    top: 0px;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    width: 80px;
+    transform: translate(-50%);
 }
  .box2{
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     padding: 30px;
@@ -71,7 +78,7 @@ body{
     display: flex;
     flex-direction: column;
     background-color: rgb(57, 40, 74);
-    width: 25%;
+    width: 20%;
     color: white;
     border-radius: 25px;
     justify-content: flex-start;
@@ -83,7 +90,7 @@ body{
     display: flex;
     flex-direction: column;
     background-color: rgb(57, 40, 74);
-    width: 25%;
+    width: 20%;
     color: white;
     border-radius: 25px;
     justify-content: flex-start;
@@ -150,11 +157,11 @@ body{
 .gameContent{
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 80%;
     margin: 30px;
     justify-content: center;
     color: white;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     text-align: center;
      
 }
@@ -169,11 +176,12 @@ body{
 }
 
 .beneathContainer{
+    margin-bottom: 40px;
     display: flex;
     flex-direction: row;
 }
 .div1{
-    width: 18%;
+    width: 20%;
 }
 .div3{
     width: 20%;
@@ -227,6 +235,10 @@ body{
 }
 
 .footer{
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
     display: flex;
     flex-direction: row;
     color: white;
@@ -244,7 +256,6 @@ body{
     justify-content: center;
     text-align: flex-start;
     width: 20%;
-    border: 1px solid grey;
     margin: 10px;
     height: 20vh;
 }
