@@ -3,6 +3,7 @@
 body{
     background-color: rgb(43, 26, 59);
     font-family: "Host Grotesk", sans-serif;
+    overflow-x: hidden;
 }
 .headerContainer{
     background-color: rgb(57, 40, 74) ;
@@ -55,6 +56,7 @@ body{
     height: 80vh;
     justify-content: space-evenly;
     margin-bottom: 10px;
+    position: relative;
 }
 #menuIco{
     scale: 1.5;
@@ -74,7 +76,7 @@ body{
     border-radius: 25px;
     justify-content: flex-start;
     align-items: center;
-    transform: translateX(500px);
+    transform: translateX(700px);
     transition: 0.5s ease;
 }
 .openProfile{
@@ -98,7 +100,7 @@ body{
     background-color: rgb(57, 40, 74) ;    
     border-radius: 25px;
     text-align: center;
-    transform: translateX(-500px);
+    transform: translateX(-600px);
     transition: 0.5s ease;
 }
 .open{
@@ -111,6 +113,7 @@ body{
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     transform: translateX(0);
     transition: 0.5s ease;
+  
 }
 #gamepadIco{
     scale: 2;
@@ -147,13 +150,13 @@ body{
 .gameContent{
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 70%;
     margin: 30px;
     justify-content: center;
     color: white;
     flex-wrap: wrap;
     text-align: center;
-    
+     
 }
 .game{
     display: flex;
@@ -190,7 +193,7 @@ body{
     display: flex;
     width: 100%;
     justify-content: center;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 #googleBtn{
     font-size: 15px;
@@ -229,6 +232,9 @@ body{
     color: white;
     width: 100%;
     justify-content: space-between;
+    position: absolute;
+    left: 0;
+    right: 0;
     background-color: rgb(57, 40, 74);
 }
 .footer1, .footer2, .footer3, .footer4, .footer5{
@@ -236,12 +242,35 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: flex-start;
     width: 20%;
     border: 1px solid grey;
     margin: 10px;
     height: 20vh;
 }
+.footer1{
+    justify-content: center;
+    border: 0;
+}
+.footer2{
+    border: 0;
+    gap: 20px;
+    align-items: flex-start;
+    
+}
 .footer3{
     width: 30%;
+    border: 0;
+    align-items: flex-start;
+}
+.contact{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    color: white;
+}
+.insta{
+    cursor: pointer;
 }
 
