@@ -5,6 +5,16 @@ body{
     font-family: "Host Grotesk", sans-serif;
     overflow-x: hidden;
 }
+
+#myDiv canvas{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+
 .headerContainer{
     background-color: rgb(57, 40, 74) ;
     border-radius: 25px;
