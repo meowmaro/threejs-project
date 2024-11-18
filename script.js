@@ -18,7 +18,7 @@ const camera = new THREE.PerspectiveCamera(75, canvas.width / canvas.height, 0.1
 let gltf;
 
 const loader = new THREE.GLTFLoader();
-loader.load('./model/gaysexfinal.gltf', (gltf) => {
+loader.load('./model/controller.gltf', (gltf) => {
   scene.add(gltf.scene);
 
   const box = new THREE.Box3().setFromObject(gltf.scene);
