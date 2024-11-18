@@ -15,7 +15,7 @@ body{
     outline: none;
   }
 .headerContainer{
-    background-color: rgb(57, 40, 74) ;
+    background-color: rgb(37, 0, 73);
     border-radius: 25px;
     display: flex;
     flex-direction: row;
@@ -86,7 +86,7 @@ body{
 .profile{
     display: flex;
     flex-direction: column;
-    background-color: rgb(57, 40, 74);
+    background-color: rgb(37, 0, 73);
     width: 20%;
     color: white;
     border-radius: 25px;
@@ -98,7 +98,7 @@ body{
 .openProfile{
     display: flex;
     flex-direction: column;
-    background-color: rgb(57, 40, 74);
+    background-color: rgb(37, 0, 73);
     width: 20%;
     color: white;
     border-radius: 25px;
@@ -140,17 +140,18 @@ body{
     color: white;
     padding: 10px;
     width: 20%;
-    background-color: rgb(57, 40, 74) ;    
+    background-color: rgb(37, 0, 73);
     border-radius: 25px;
     text-align: center;
     transform: translateX(-600px);
     transition: 0.5s ease;
 }
 .open{
+    background-color: rgb(37, 0, 73);
     color: white;
     padding: 10px;
     width: 20%;
-    background-color: rgb(57, 40, 74) ;    
+    background-color: rgb(37, 0, 73);
     border-radius: 25px;
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
@@ -275,7 +276,7 @@ body{
     position: absolute;
     left: 0;
     right: 0;
-    background-color: rgb(57, 40, 74);
+    background-color: rgb(37, 0, 73);
 }
 .footer1, .footer2, .footer3, .footer4, .footer5{
     display: flex;

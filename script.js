@@ -14,9 +14,7 @@ const renderer = new THREE.WebGLRenderer({
 
 const scene = new THREE.Scene();
 scene.background = null;
-
 const camera = new THREE.PerspectiveCamera(75, canvas.width / canvas.height, 0.1, 1000);
-
 let gltf;
 
 const loader = new THREE.GLTFLoader();
@@ -62,7 +60,6 @@ function insertName(event) {
   const nameValue = nameInput.value;  
   const passValue = passInput.value;
   
-
   const newData = { name: nameValue, password: passValue};  
 
   // Send the data to the server
@@ -79,10 +76,6 @@ function insertName(event) {
     })
     .catch(error => console.error('Error inserting data:', error));
 }
-
-
-
-
 
 function openProfile() {
     if (document.getElementById("profile").className === "profile")
