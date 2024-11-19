@@ -18,7 +18,7 @@ function insertName(event) {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(newData)  // Send name in the correct format
+    body: JSON.stringify(newData)  
   })
     .then(response => response.json())
     .then(result => {
@@ -26,6 +26,8 @@ function insertName(event) {
     })
     .catch(error => console.error('Error inserting data:', error));
 }
+
+document.getElementById('loginCardForm').addEventListener('submit', login);
 
 
 
@@ -41,3 +43,14 @@ function openProfile() {
       document.getElementById("sideNav").className = "open";
     else document.getElementById("sideNav").classList = "sideNav";
   }
+
+
+
+
+  //client ID for google authentication
+  //327018359293-eng2gcueu5t89sagkhc2g0fdga92s7v9.apps.googleusercontent.com
+
+
+
+  //client sevret for google authentication
+  //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
