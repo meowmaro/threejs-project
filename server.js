@@ -1,6 +1,6 @@
-const express = require("express");
-const MongoClient = require("mongodb").MongoClient;
-const cors = require("cors");
+const express = require('express');
+const MongoClient = require('mongodb').MongoClient;
+const cors = require('cors');
 const app = express();
 const port = 3000;
 
@@ -10,7 +10,7 @@ app.use(cors());
 
 // MongoDB connection URI
 const mongoURI =
-  "mongodb+srv://maro:Quantix123!@threejs.3iyic.mongodb.net/?retryWrites=true&w=majority&appName=threejs";
+  'mongodb+srv://maro:Quantix123!@threejs.3iyic.mongodb.net/?retryWrites=true&w=majority&appName=threejs';
 
 let db;
 MongoClient.connect(mongoURI, {
@@ -19,42 +19,51 @@ MongoClient.connect(mongoURI, {
 })
   .then((client) => {
     db = client.db(); // Database instance
-    console.log("Connected to MongoDB");
+    console.log('Connected to MongoDB');
   })
-  .catch((error) => console.error("Failed to connect to MongoDB:", error));
+  .catch((error) => console.error('Failed to connect to MongoDB:', error));
 
 // Example route to fetch data from MongoDB
-app.get("/data", (req, res) => {
-  const collection = db.collection("test");
+app.get('/data', (req, res) => {
+  const collection = db.collection('test');
   collection
     .find()
     .toArray()
     .then((items) => res.json(items))
-    .catch((error) => res.status(500).json({ error: "Failed to fetch data" }));
+    .catch((error) => res.status(500).json({ error: 'Failed to fetch data' }));
 });
 
-app.get("/data/users", (req, res) => {
-  const collection = db.collection("test");
+app.get('/data/users', (req, res) => {
+  const collection = db.collection('test');
   collection
     .find()
     .toArray()
     .then((items) => res.json(items))
-    .catch((error) => res.status(500).json({ error: "Failed to fetch data" }));
+    .catch((error) => res.status(500).json({ error: 'Failed to fetch data' }));
 });
 
 // Example route to insert data into MongoDB
-app.post("/data/users", (req, res) => {
-  const collection = db.collection("users");
+app.post('/data/users', (req, res) => {
+  const collection = db.collection('users');
   const newData = req.body;
 
   collection
     .insertOne(newData)
     .then((result) => res.json(result))
-    .catch((error) => res.status(500).json({ error: "Failed to insert data" }));
+    .catch((error) => res.status(500).json({ error: 'Failed to insert data' }));
 });
 
-app.put("/data/users", (req, res) => {
-  res.send("Put request works");
+app.post('/data/login', (req, res) => {
+  const collection = db.collection('users');
+  const newData = req.body;
+
+  collection
+    .findOne({ name: newData.name, password: newData.password })
+    .then((result) => res.json(result))
+    .catch((error) => {
+      console.error(error);
+      res.status(500).json({ error: 'Failed' });
+    });
 });
 
 app.listen(port, () => {
