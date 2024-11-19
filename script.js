@@ -23,7 +23,8 @@ const camera = new THREE.PerspectiveCamera(
 let gltf;
 
 const loader = new THREE.GLTFLoader();
-loader.load('./model/controller.gltf', (gltf) => {
+loader.load('./model/controller.gltf', (loadedGltf) => {
+  gltf = loadedGltf;
   scene.add(gltf.scene);
 
   const box = new THREE.Box3().setFromObject(gltf.scene);
@@ -67,21 +68,43 @@ function insertName(event) {
 
   const newData = { name: nameValue, password: passValue };
 
-  // Send the data to the server
-  fetch(apiUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(newData),
-  })
-    .then((response) => response.json())
-    .then((result) => {
-      console.log('Inserted data:', result);
+  if (!nameValue) {
+    alert('Please enter a name');
+    return;
+  } else if (!passValue) {
+    alert('Please enter a password');
+    return;
+  } else {
+    // Send the data to the server
+    fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newData), // Send name in the correct format
     })
-    .catch((error) => console.error('Error inserting data:', error));
+      .then((response) => response.json())
+      .then((result) => {
+        console.log('Inserted data:', result);
+      })
+      .catch((error) => console.error('Error inserting data:', error));
+  }
 }
-document.getElementById('loginCardForm').addEventListener('submit', login);
+
+fetch('http://localhost:3000/data/users', {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+})
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+
 function openProfile() {
   if (document.getElementById('profile').className === 'profile')
     document.getElementById('profile').className = 'openProfile';
