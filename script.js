@@ -1,7 +1,7 @@
 const gltfLoader = new THREE.GLTFLoader();
 
-const myDiv = document.getElementById("myDiv");
-const canvas = document.createElement("canvas");
+const myDiv = document.getElementById('myDiv');
+const canvas = document.createElement('canvas');
 canvas.width = 400;
 canvas.height = 400;
 myDiv.appendChild(canvas);
@@ -23,7 +23,7 @@ const camera = new THREE.PerspectiveCamera(
 let gltf;
 
 const loader = new THREE.GLTFLoader();
-loader.load("./model/controller.gltf", (loadedGltf) => {
+loader.load('./model/controller.gltf', (loadedGltf) => {
   gltf = loadedGltf;
   scene.add(gltf.scene);
 
@@ -55,46 +55,46 @@ loader.load("./model/controller.gltf", (loadedGltf) => {
   animate();
 });
 
-const apiUrl = "http://localhost:3000/data/users";
+const apiUrl = 'http://localhost:3000/data/users';
 
-document.getElementById("insertName").addEventListener("submit", insertName);
+document.getElementById('insertName').addEventListener('submit', insertName);
 
 function insertName(event) {
   event.preventDefault();
-  const nameInput = document.getElementById("name");
-  const passInput = document.getElementById("password");
+  const nameInput = document.getElementById('name');
+  const passInput = document.getElementById('password');
   const nameValue = nameInput.value;
   const passValue = passInput.value;
 
   const newData = { name: nameValue, password: passValue };
 
   if (!nameValue) {
-    alert("Please enter a name");
+    alert('Please enter a name');
     return;
   } else if (!passValue) {
-    alert("Please enter a password");
+    alert('Please enter a password');
     return;
   } else {
     // Send the data to the server
     fetch(apiUrl, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(newData), // Send name in the correct format
     })
       .then((response) => response.json())
       .then((result) => {
-        console.log("Inserted data:", result);
+        console.log('Inserted data:', result);
       })
-      .catch((error) => console.error("Error inserting data:", error));
+      .catch((error) => console.error('Error inserting data:', error));
   }
 }
 
-fetch("http://localhost:3000/data/users", {
-  method: "GET",
+fetch('http://localhost:3000/data/users', {
+  method: 'GET',
   headers: {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
   },
 })
   .then((response) => response.json())
@@ -102,40 +102,16 @@ fetch("http://localhost:3000/data/users", {
     console.log(data);
   })
   .catch((error) => {
-    console.error("Error:", error);
+    console.error('Error:', error);
   });
 
 function openProfile() {
-  if (document.getElementById("profile").className === "profile")
-    document.getElementById("profile").className = "openProfile";
-  else document.getElementById("profile").classList = "profile";
+  if (document.getElementById('profile').className === 'profile')
+    document.getElementById('profile').className = 'openProfile';
+  else document.getElementById('profile').classList = 'profile';
 }
 function openNav() {
-  if (document.getElementById("sideNav").className === "sideNav")
-    document.getElementById("sideNav").className = "open";
-  else document.getElementById("sideNav").classList = "sideNav";
+  if (document.getElementById('sideNav').className === 'sideNav')
+    document.getElementById('sideNav').className = 'open';
+  else document.getElementById('sideNav').classList = 'sideNav';
 }
-
-let username = document.getElementById("userame");
-let password = document.getElementById("password");
-const usernameValue = username.value;
-const passwordValue = password.value;
-
-const userData = { name: nameValue, password: passValue };
-
-app.get("http://localhost:3000/data/users/:userId", async (req, res) => {
-  const userId = req.params.userId;
-  try {
-    const result = await users.findById(userId);
-    res.send({
-      success: true,
-      message: "logged in",
-      data: result,
-    });
-  } catch (error) {
-    res.send({
-      success: false,
-      message: "nuh uh",
-    });
-  }
-});
