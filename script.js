@@ -81,9 +81,7 @@ function insertName(event) {
     })
     .catch((error) => console.error('Error inserting data:', error));
 }
-
 document.getElementById('loginCardForm').addEventListener('submit', login);
-
 function openProfile() {
   if (document.getElementById('profile').className === 'profile')
     document.getElementById('profile').className = 'openProfile';
