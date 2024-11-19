@@ -135,7 +135,7 @@ app.get("http://localhost:3000/data/users/:userId", async (req, res) => {
   } catch (error) {
     res.send({
       success: false,
-      message: "Failed to fetch Todo",
+      message: "nuh uh",
     });
   }
 });
