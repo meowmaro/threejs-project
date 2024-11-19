@@ -66,6 +66,9 @@ body{
     color: white;
 }
 .mainContainer{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     background-image: url('/images/purpletextured.jpg');
     display: flex;
     flex-direction: row;
