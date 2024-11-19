@@ -3,12 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>test</title>
+    <title>Game Website</title>
+    <script type="module" src="script.js"></script>
     <link rel="stylesheet" href="style.css" />
     <script
       src="https://kit.fontawesome.com/07d8b9c47e.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js" integrity="sha512-n8IpKWzDnBOcBhRlHirMZOUvEq2bLRMuJGjuVqbzUJwtTsgwOgK5aS0c1JA647XWYfqvXve8k3PtZdzpipFjgg==" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
   </head>
   <body>
     <div class="headerContainer">
@@ -16,7 +19,9 @@
         <i id="menuIco" onclick="openNav()" class="fa-solid fa-bars"></i>
       </div>
       <div class="box2">
-        <div><img id="logo2" src="logo2.png" alt="" /></div>
+        <div id="myDiv" style="width: 400px; height: 400px;">
+        </div>
+        <div><img id="logo2" src="none" alt="" /></div>
       </div>
       <div class="box3">
         <div class="profIco">
@@ -48,7 +53,7 @@
             src="https://www.yourdecoration.nl/cdn/shop/files/pyramid-pp34131-the-legend-of-zelda-breath-of-the-wild-sunset-poster-61x91-5cm_175x.jpg?v=1715338644"
             alt="zelda"
           />
-          <h3 class="gameInfo">The legend of Zelda</h3>
+          <h3 class="gameInfo">The Legend of Zelda</h3>
         </div>
         <div class="gameCard">
           <img
@@ -61,7 +66,7 @@
       </div>
       <div class="gameContent">
         <div class="gameTitle"><h1>Project Zero</h1></div>
-        <div class="game">(game)</div>
+        <div class="game">(Insert game here)</div>
       </div>
 
       <div id="profile" class="profile">
@@ -97,11 +102,11 @@
       <div class="gameAbout">
         <div class="gametxt">
           <p>
-            is a fast-paced first-person shooter where every move counts. Use W,
+            Project Zero is a fast-paced first-person shooter where every move counts. Use W,
             A, S, D to navigate and the left mouse button to shoot in intense
             combat scenarios. Fight through dynamic environments with a variety
             of weapons, from rifles to SMGs, and engage in high-stakes battles
-            against AI or other players. The simple controls make it easy to
+            against AI. The simple controls make it easy to
             jump in, but strategic gameplay keeps things challenging. Whether
             you're playing solo or multiplayer, Project Zero delivers an
             action-packed experience from start to finish.
@@ -119,13 +124,12 @@
         <div class="footer4"></div>
         <div class="footer5"><h3>Contact us:</h3> 
           <div class="contact">
-            <p>Ali :</p>
+            <p>Ali:</p>
             <span class="insta" href="#"> Instagram <i class="fa-brands fa-instagram "></i> </span>
             <span class="insta" href ="#"> Github <i class="fa-brands fa-github"></i></i></span>
           </div>
           <div class="contact">
-            <p>Maro :</p>
-            <span class="insta" href="#"> Instagram <i class="fa-brands fa-instagram "></i></span>
+            <p>Maro:</p>
             <span class="insta" href ="#"> Github <i class="fa-brands fa-github"></i></i></span>
           </div></div>
     </div>

@@ -1,5 +1,9 @@
 {
-  "name": "threejs-project",
+  "three-dependencies": {
+    "three-gltf-loader": "^1.111.0"
+  }
+
+  ,"name": "threejs-project",
   "version": "1.0.0",
   "main": "script.js",
   "scripts": {
