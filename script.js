@@ -1,7 +1,7 @@
 const gltfLoader = new THREE.GLTFLoader();
 
-const myDiv = document.getElementById('myDiv');
-const canvas = document.createElement('canvas');
+const myDiv = document.getElementById("myDiv");
+const canvas = document.createElement("canvas");
 canvas.width = 400;
 canvas.height = 400;
 myDiv.appendChild(canvas);
@@ -9,16 +9,22 @@ myDiv.appendChild(canvas);
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
   antialias: true,
-  alpha: true
+  alpha: true,
 });
 
 const scene = new THREE.Scene();
 scene.background = null;
-const camera = new THREE.PerspectiveCamera(75, canvas.width / canvas.height, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(
+  75,
+  canvas.width / canvas.height,
+  0.1,
+  1000
+);
 let gltf;
 
 const loader = new THREE.GLTFLoader();
-loader.load('./model/controller.gltf', (gltf) => {
+loader.load("./model/controller.gltf", (loadedGltf) => {
+  gltf = loadedGltf;
   scene.add(gltf.scene);
 
   const box = new THREE.Box3().setFromObject(gltf.scene);
@@ -37,7 +43,7 @@ loader.load('./model/controller.gltf', (gltf) => {
 
   function animate() {
     requestAnimationFrame(animate);
-  
+
     const shakeAmount = 2;
     const shakeSpeed = 0.004;
     gltf.scene.position.x = Math.sin(Date.now() * shakeSpeed) * shakeAmount;
@@ -45,45 +51,68 @@ loader.load('./model/controller.gltf', (gltf) => {
     camera.lookAt(gltf.scene.position);
     renderer.render(scene, camera);
   }
-  
+
   animate();
 });
 
-animate();const apiUrl = 'http://localhost:3000/data';
+const apiUrl = "http://localhost:3000/data/users";
 
-document.getElementById('insertName').addEventListener('submit', insertName);
+document.getElementById("insertName").addEventListener("submit", insertName);
 
 function insertName(event) {
-  event.preventDefault();  
-  const nameInput = document.getElementById('name');
-  const passInput = document.getElementById('password');
-  const nameValue = nameInput.value;  
+  event.preventDefault();
+  const nameInput = document.getElementById("name");
+  const passInput = document.getElementById("password");
+  const nameValue = nameInput.value;
   const passValue = passInput.value;
-  
-  const newData = { name: nameValue, password: passValue};  
 
-  // Send the data to the server
-  fetch(apiUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(newData)  // Send name in the correct format
-  })
-    .then(response => response.json())
-    .then(result => {
-      console.log('Inserted data:', result);
+  const newData = { name: nameValue, password: passValue };
+
+  if (!nameValue) {
+    alert("Please enter a name");
+    return;
+  } else if (!passValue) {
+    alert("Please enter a password");
+    return;
+  } else {
+    // Send the data to the server
+    fetch(apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newData), // Send name in the correct format
     })
-    .catch(error => console.error('Error inserting data:', error));
+      .then((response) => response.json())
+      .then((result) => {
+        console.log("Inserted data:", result);
+      })
+      .catch((error) => console.error("Error inserting data:", error));
+  }
 }
 
+fetch("http://localhost:3000/data/users", {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+  },
+})
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
+
 function openProfile() {
-    if (document.getElementById("profile").className === "profile")
-      document.getElementById("profile").className = "openProfile";
-    else document.getElementById("profile").classList = "profile";
-  }
-  function openNav() {
-    if (document.getElementById("sideNav").className === "sideNav")
-      document.getElementById("sideNav").className = "open";
-    else document.getElementById("sideNav").classList = "sideNav";
-  }
+  if (document.getElementById("profile").className === "profile")
+    document.getElementById("profile").className = "openProfile";
+  else document.getElementById("profile").classList = "profile";
+}
+function openNav() {
+  if (document.getElementById("sideNav").className === "sideNav")
+    document.getElementById("sideNav").className = "open";
+  else document.getElementById("sideNav").classList = "sideNav";
+}
+//test

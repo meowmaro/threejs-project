@@ -4,6 +4,9 @@ body{
     background-color: rgb(43, 26, 59);
     font-family: "Host Grotesk", sans-serif;
     overflow-x: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     background-image: url('/images/purpletextured.jpg');
 }
 #myDiv canvas{
@@ -266,7 +269,7 @@ body{
     scale: 1.1;
     transition: 0.3s ease;
 }
-.footer{
+.footer{ 
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     border-bottom-left-radius: 0px;
     border-top-left-radius: 25px;
