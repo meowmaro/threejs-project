@@ -105,6 +105,10 @@ fetch("http://localhost:3000/data/users", {
     console.error("Error:", error);
   });
 
+async function loginUser() {
+  let username = document.getElementById('username').value;
+}
+
 function openProfile() {
   if (document.getElementById("profile").className === "profile")
     document.getElementById("profile").className = "openProfile";
