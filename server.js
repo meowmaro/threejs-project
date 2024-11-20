@@ -1,7 +1,7 @@
-const express = require('express');
-const MongoClient = require('mongodb').MongoClient;
-const cors = require('cors');
-const usersRoute = require('./routes/users');
+const express = require("express");
+const MongoClient = require("mongodb").MongoClient;
+const cors = require("cors");
+const usersRoute = require("./routes/users");
 const app = express();
 const port = 3000;
 
@@ -11,7 +11,7 @@ app.use(cors());
 
 // MongoDB connection URI
 const mongoURI =
-  'mongodb+srv://maro:Quantix123!@threejs.3iyic.mongodb.net/?retryWrites=true&w=majority&appName=threejs';
+  "mongodb+srv://maro:Quantix123!@threejs.3iyic.mongodb.net/?retryWrites=true&w=majority&appName=threejs";
 
 let db;
 MongoClient.connect(mongoURI, {
@@ -20,9 +20,9 @@ MongoClient.connect(mongoURI, {
 })
   .then((client) => {
     db = client.db(); // Database instance
-    console.log('Connected to MongoDB');
+    console.log("Connected to MongoDB");
   })
-  .catch((error) => console.error('Failed to connect to MongoDB:', error));
+  .catch((error) => console.error("Failed to connect to MongoDB:", error));
 
 // GET /users - Get all users
 // GET /users/:id - Get single user by ID
@@ -30,7 +30,7 @@ MongoClient.connect(mongoURI, {
 // PUT /users/:id - Update existing user by ID
 // DELETE /users/:id - Delete user by ID
 
-app.use('/users', usersRoute);
+app.use("/users", usersRoute);
 
 // Example route to fetch data from MongoDB
 /* app.get('/data', (req, res) => {
@@ -62,8 +62,8 @@ app.post("/data/users", (req, res) => {
     .catch((error) => res.status(500).json({ error: 'Failed to insert data' }));
 }); */
 
-app.post('/data/login', (req, res) => {
-  const collection = db.collection('users');
+app.post("/data/login", (req, res) => {
+  const collection = db.collection("users");
   const newData = req.body;
 
   console.log(newData);
@@ -74,40 +74,40 @@ app.post('/data/login', (req, res) => {
       if (result) {
         res.json(result);
       } else {
-        res.status(401).json({ error: 'Invalid credentials' });
+        res.status(401).json({ error: "Invalid credentials" });
       }
     })
     .catch((error) => {
       console.error(error);
-      res.status(500).json({ error: 'Failed' });
+      res.status(500).json({ error: "Failed" });
     });
 });
-app.get('/:userId', async (req, res) => {
+app.get("/:userId", async (req, res) => {
   const userId = req.params.userId;
-  const collection = db.collection('users');
+  const collection = db.collection("users");
   try {
     console.log(`Fetching user with ID: ${userId}`);
     const result = await collection.findOne({ _id: new ObjectId(userId) });
     if (result) {
-      console.log('User found:', result);
+      console.log("User found:", result);
       res.send({
         success: true,
-        message: 'UserId fetched successfully',
+        message: "UserId fetched successfully",
         data: result,
         id: result._id,
       });
     } else {
-      console.log('User not found');
+      console.log("User not found");
       res.send({
         success: false,
-        message: 'User not found',
+        message: "User not found",
       });
     }
   } catch (error) {
-    console.error('Error fetching user by ID:', error);
+    console.error("Error fetching user by ID:", error);
     res.send({
       success: false,
-      message: 'Failed to fetch UserId',
+      message: "Failed to fetch UserId",
       error: error.message,
     });
   }
