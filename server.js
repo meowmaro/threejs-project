@@ -1,6 +1,7 @@
 const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
 const cors = require('cors');
+const usersRoute = require('./routes/users');
 const app = express();
 const port = 3000;
 
@@ -23,8 +24,16 @@ MongoClient.connect(mongoURI, {
   })
   .catch((error) => console.error('Failed to connect to MongoDB:', error));
 
+// GET /users - Get all users
+// GET /users/:id - Get single user by ID
+// POST /users - Create new user
+// PUT /users/:id - Update existing user by ID
+// DELETE /users/:id - Delete user by ID
+
+app.use('/users', usersRoute);
+
 // Example route to fetch data from MongoDB
-app.get('/data', (req, res) => {
+/* app.get('/data', (req, res) => {
   const collection = db.collection('test');
   collection
     .find()
@@ -51,15 +60,23 @@ app.post('/data/users', (req, res) => {
     .insertOne(newData)
     .then((result) => res.json(result))
     .catch((error) => res.status(500).json({ error: 'Failed to insert data' }));
-});
+}); */
 
 app.post('/data/login', (req, res) => {
   const collection = db.collection('users');
   const newData = req.body;
 
+  console.log(newData);
+
   collection
-    .findOne({ name: newData.name, password: newData.password })
-    .then((result) => res.json(result))
+    .findOne({ name: newData.username, password: newData.password })
+    .then((result) => {
+      if (result) {
+        res.json(result);
+      } else {
+        res.status(401).json({ error: 'Invalid credentials' });
+      }
+    })
     .catch((error) => {
       console.error(error);
       res.status(500).json({ error: 'Failed' });

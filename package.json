@@ -8,7 +8,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "serve": "node script.js"
+    "serve": "node script.js",
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -17,8 +18,13 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
+    "ejs": "^3.1.10",
     "express": "^4.21.1",
     "jsonwebtoken": "^9.0.2",
-    "mongodb": "^6.10.0"
+    "mongodb": "^6.10.0",
+    "mongoose": "^8.8.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
   }
 }

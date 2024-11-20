@@ -55,12 +55,13 @@ loader.load('./model/controller.gltf', (loadedGltf) => {
   animate();
 });
 
-const apiUrl = 'http://localhost:3000/data/users';
-
 document.getElementById('insertName').addEventListener('submit', insertName);
 
 function insertName(event) {
   event.preventDefault();
+
+  document.querySelector('#insertName > button').disabled = true;
+
   const nameInput = document.getElementById('name');
   const passInput = document.getElementById('password');
   const nameValue = nameInput.value;
@@ -76,12 +77,12 @@ function insertName(event) {
     return;
   } else {
     // Send the data to the server
-    fetch(apiUrl, {
+    fetch('http://localhost:3000/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(newData), // Send name in the correct format
+      body: JSON.stringify(newData),
     })
       .then((response) => response.json())
       .then((result) => {
@@ -89,9 +90,11 @@ function insertName(event) {
       })
       .catch((error) => console.error('Error inserting data:', error));
   }
+
+  document.querySelector('#insertName > button').disabled = false;
 }
 
-fetch('http://localhost:3000/data/users', {
+/* fetch('http://localhost:3000/data/users', {
   method: 'GET',
   headers: {
     'Content-Type': 'application/json',
@@ -103,11 +106,58 @@ fetch('http://localhost:3000/data/users', {
   })
   .catch((error) => {
     console.error('Error:', error);
-  });
+  }); */
 
-async function loginUser() {
+// async function loginUser() {
+//   let username = document.getElementById('username').value;
+//   let password = document.getElementById('password').value;
+//   fetch('http://localhost:3000/data/login', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify({ username, password }),
+//   })
+//     .then((response) => response.json())
+//     .then((data) => {
+//       console.log(`found user ${data.name}`);
+//     })
+//     .catch((error) => {
+//       console.error('error:', error);
+//     });
+// }
+
+/* document.getElementById('loginForm').addEventListener('submit', loginUser);
+
+async function loginUser(e) {
+  e.preventDefault();
+
   let username = document.getElementById('username').value;
-}
+  let password = document.getElementById('password').value;
+
+  try {
+    // Making the POST request and waiting for the response
+    const response = await fetch('http://localhost:3000/data/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, password }),
+    });
+
+    // Check if the response status is OK
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    // Parse the JSON response and log the user data
+    const data = await response.json();
+    console.log(`found user ${data.name}`);
+  } catch (error) {
+    // Handle any errors
+    console.error('error:', error);
+  }
+} */
 
 function openProfile() {
   if (document.getElementById('profile').className === 'profile')
@@ -119,3 +169,14 @@ function openNav() {
     document.getElementById('sideNav').className = 'open';
   else document.getElementById('sideNav').classList = 'sideNav';
 }
+
+// const data = fetch()
+//   .then((result) => result.json())
+//   .catch();
+
+// try {
+//   const res = await fetch();
+//   const data = await res.json();
+// } catch (err) {
+//   console.error(err);
+// }

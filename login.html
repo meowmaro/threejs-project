@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js"
+      integrity="sha512-n8IpKWzDnBOcBhRlHirMZOUvEq2bLRMuJGjuVqbzUJwtTsgwOgK5aS0c1JA647XWYfqvXve8k3PtZdzpipFjgg=="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="mainContainer">
-        <div class="loginCard">
-            <h1>Login</h1>
-            <form class="loginCardForm">
-                <input class="btn input" type="text" id="username" placeholder="username">
-                <input class="btn input" type="password" id="password" placeholder="password">
-                <input class="btn input" type="submit" value="log in ">
-            </form>
-        </div>
+      <div class="loginCard">
+        <h1>Login</h1>
+        <form class="loginCardForm" id="loginForm">
+          <input
+            class="btn input"
+            type="text"
+            id="username"
+            placeholder="username"
+          />
+          <input
+            class="btn input"
+            type="password"
+            id="password"
+            placeholder="password"
+          />
+          <input class="btn input" type="submit" value="log in " />
+        </form>
+      </div>
     </div>
-</body>
+  </body>
+  <script src="login.js"></script>
 </html>
