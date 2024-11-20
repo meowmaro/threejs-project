@@ -10,11 +10,13 @@ async function loginUser(e) {
     username,
     password,
   };
-
   console.log(payload);
 
+  if (!payload.username || !payload.password) {
+    alert('Please enter both username and password');
+  }
+
   try {
-    // Making the POST request and waiting for the response
     const response = await fetch('http://localhost:3000/data/login', {
       method: 'POST',
       headers: {
@@ -23,16 +25,14 @@ async function loginUser(e) {
       body: JSON.stringify(payload),
     });
 
-    // Check if the response status is OK
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-
-    // Parse the JSON response and log the user data
     const data = await response.json();
-    console.log(`found user ${data.name}`);
+    console.log(`found user ${data._id}`);
+    localStorage.setItem('userID', data._id);
+    window.location.href = 'index.html';
   } catch (error) {
-    // Handle any errors
-    console.error('error:', error);
+    console.error(error);
   }
 }

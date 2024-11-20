@@ -57,41 +57,31 @@ loader.load('./model/controller.gltf', (loadedGltf) => {
 
 document.getElementById('insertName').addEventListener('submit', insertName);
 
-function insertName(event) {
-  event.preventDefault();
-
-  document.querySelector('#insertName > button').disabled = true;
+function insertName(e) {
+  e.preventDefault();
 
   const nameInput = document.getElementById('name');
-  const passInput = document.getElementById('password');
+  const passwordInput = document.getElementById('password');
+
   const nameValue = nameInput.value;
-  const passValue = passInput.value;
+  const passwordValue = passwordInput.value;
 
-  const newData = { name: nameValue, password: passValue };
-
-  if (!nameValue) {
-    alert('Please enter a name');
-    return;
-  } else if (!passValue) {
-    alert('Please enter a password');
-    return;
+  if (!nameValue || !passwordValue) {
+    alert('Please enter both name and password');
   } else {
-    // Send the data to the server
-    fetch('http://localhost:3000/users', {
+    fetch('http://localhost:3000/data/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(newData),
+      body: JSON.stringify({ name: nameValue, password: passwordValue }),
     })
       .then((response) => response.json())
       .then((result) => {
-        console.log('Inserted data:', result);
+        console.log('Inserted', result);
       })
-      .catch((error) => console.error('Error inserting data:', error));
+      .catch((err) => console.log('Error:', err));
   }
-
-  document.querySelector('#insertName > button').disabled = false;
 }
 
 /* fetch('http://localhost:3000/data/users', {
@@ -107,57 +97,6 @@ function insertName(event) {
   .catch((error) => {
     console.error('Error:', error);
   }); */
-
-// async function loginUser() {
-//   let username = document.getElementById('username').value;
-//   let password = document.getElementById('password').value;
-//   fetch('http://localhost:3000/data/login', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify({ username, password }),
-//   })
-//     .then((response) => response.json())
-//     .then((data) => {
-//       console.log(`found user ${data.name}`);
-//     })
-//     .catch((error) => {
-//       console.error('error:', error);
-//     });
-// }
-
-/* document.getElementById('loginForm').addEventListener('submit', loginUser);
-
-async function loginUser(e) {
-  e.preventDefault();
-
-  let username = document.getElementById('username').value;
-  let password = document.getElementById('password').value;
-
-  try {
-    // Making the POST request and waiting for the response
-    const response = await fetch('http://localhost:3000/data/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ username, password }),
-    });
-
-    // Check if the response status is OK
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    // Parse the JSON response and log the user data
-    const data = await response.json();
-    console.log(`found user ${data.name}`);
-  } catch (error) {
-    // Handle any errors
-    console.error('error:', error);
-  }
-} */
 
 function openProfile() {
   if (document.getElementById('profile').className === 'profile')

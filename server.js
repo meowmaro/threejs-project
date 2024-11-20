@@ -8,6 +8,7 @@ const port = 3000;
 // Middleware to parse JSON bodies and handle CORS
 app.use(express.json());
 app.use(cors());
+app.use('/users', usersRoute);
 
 // MongoDB connection URI
 const mongoURI =
@@ -19,49 +20,12 @@ MongoClient.connect(mongoURI, {
   useUnifiedTopology: true,
 })
   .then((client) => {
-    db = client.db(); // Database instance
+    db = client.db();
     console.log('Connected to MongoDB');
   })
   .catch((error) => console.error('Failed to connect to MongoDB:', error));
 
-// GET /users - Get all users
-// GET /users/:id - Get single user by ID
-// POST /users - Create new user
-// PUT /users/:id - Update existing user by ID
-// DELETE /users/:id - Delete user by ID
-
-app.use('/users', usersRoute);
-
-// Example route to fetch data from MongoDB
-/* app.get('/data', (req, res) => {
-  const collection = db.collection('test');
-  collection
-    .find()
-    .toArray()
-    .then((items) => res.json(items))
-    .catch((error) => res.status(500).json({ error: "Failed to fetch data" }));
-});
-
-app.get("/data/users", (req, res) => {
-  const collection = db.collection("test");
-  collection
-    .find()
-    .toArray()
-    .then((items) => res.json(items))
-    .catch((error) => res.status(500).json({ error: "Failed to fetch data" }));
-});
-
-// Example route to insert data into MongoDB
-app.post("/data/users", (req, res) => {
-  const collection = db.collection("users");
-  const newData = req.body;
-
-  collection
-    .insertOne(newData)
-    .then((result) => res.json(result))
-    .catch((error) => res.status(500).json({ error: 'Failed to insert data' }));
-}); */
-
+// login
 app.post('/data/login', (req, res) => {
   const collection = db.collection('users');
   const newData = req.body;
@@ -82,6 +46,27 @@ app.post('/data/login', (req, res) => {
       res.status(500).json({ error: 'Failed' });
     });
 });
+
+// sign up
+app.post('/data/users', (req, res) => {
+  const collection = db.collection('users');
+  const newData = req.body;
+
+  console.log('Received data:', newData);
+
+  collection
+    .insertOne({ name: newData.name, password: newData.password })
+    .then((result) => {
+      console.log('Added user:', result);
+      res.json(result);
+    })
+    .catch((err) => {
+      console.log('Error signing up:', err);
+      res.status(500).json({ error: 'Error signing up' });
+    });
+});
+
+//get user
 app.get('/:userId', async (req, res) => {
   const userId = req.params.userId;
   const collection = db.collection('users');
