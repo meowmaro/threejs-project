@@ -1,6 +1,7 @@
 const express = require("express");
 const MongoClient = require("mongodb").MongoClient;
 const cors = require("cors");
+const { ObjectId } = require("mongodb");
 const app = express();
 const port = 3000;
 
@@ -64,6 +65,36 @@ app.post("/data/login", (req, res) => {
       console.error(error);
       res.status(500).json({ error: "Failed" });
     });
+});
+app.get("/:userId", async (req, res) => {
+  const userId = req.params.userId;
+  const collection = db.collection("users");
+  try {
+    console.log(`Fetching user with ID: ${userId}`);
+    const result = await collection.findOne({ _id: new ObjectId(userId) });
+    if (result) {
+      console.log("User found:", result);
+      res.send({
+        success: true,
+        message: "UserId fetched successfully",
+        data: result,
+        id: result._id,
+      });
+    } else {
+      console.log("User not found");
+      res.send({
+        success: false,
+        message: "User not found",
+      });
+    }
+  } catch (error) {
+    console.error("Error fetching user by ID:", error);
+    res.send({
+      success: false,
+      message: "Failed to fetch UserId",
+      error: error.message,
+    });
+  }
 });
 
 app.listen(port, () => {
