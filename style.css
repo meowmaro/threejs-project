@@ -1,13 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
 
 body {
   background-color: rgb(43, 26, 59);
-  font-family: "Host Grotesk", sans-serif;
+  font-family: 'Host Grotesk', sans-serif;
   overflow-x: hidden;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url("/images/purpletextured.jpg");
+  background-image: url('/images/purpletextured.jpg');
 }
 #myDiv canvas {
   position: absolute;
@@ -71,7 +71,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url("/images/purpletextured.jpg");
+  background-image: url('/images/purpletextured.jpg');
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -163,7 +163,7 @@ body {
   color: white;
   font-size: large;
   border: 0;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 .submit:hover {
   scale: 1.1;
