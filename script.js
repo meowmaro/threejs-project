@@ -57,8 +57,8 @@ loader.load('./model/controller.gltf', (loadedGltf) => {
 
 document.getElementById('insertName').addEventListener('submit', insertName);
 
-function insertName(e) {
-  e.preventDefault();
+function insertName() {
+  event.preventDefault();
 
   const nameInput = document.getElementById('name');
   const passwordInput = document.getElementById('password');
@@ -79,6 +79,7 @@ function insertName(e) {
       .then((response) => response.json())
       .then((result) => {
         console.log('Inserted', result);
+        localStorage.setItem('userId', result.insertedId);
       })
       .catch((err) => console.log('Error:', err));
   }
