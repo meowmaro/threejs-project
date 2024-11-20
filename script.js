@@ -1,7 +1,7 @@
-const apiUrl = process.env.API_URL || 'http://localhost:3000/data/users';
+const apiUrl = process.env.API_URL || "http://localhost:3000/data/users";
 
-const myDiv = document.getElementById('myDiv');
-const canvas = document.createElement('canvas');
+const myDiv = document.getElementById("myDiv");
+const canvas = document.createElement("canvas");
 canvas.width = 400;
 canvas.height = 400;
 myDiv.appendChild(canvas);
@@ -23,7 +23,7 @@ const camera = new THREE.PerspectiveCamera(
 let gltf;
 
 const loader = new THREE.GLTFLoader();
-loader.load('./model/controller.gltf', (loadedGltf) => {
+loader.load("./model/controller.gltf", (loadedGltf) => {
   gltf = loadedGltf;
   scene.add(gltf.scene);
 
@@ -55,43 +55,43 @@ loader.load('./model/controller.gltf', (loadedGltf) => {
   animate();
 });
 
-document.getElementById('insertName').addEventListener('submit', insertName);
+document.getElementById("insertName").addEventListener("submit", insertName);
 
 function insertName(event) {
   event.preventDefault();
 
-  document.querySelector('#insertName > button').disabled = true;
+  document.querySelector("#insertName > button").disabled = true;
 
-  const nameInput = document.getElementById('name');
-  const passInput = document.getElementById('password');
+  const nameInput = document.getElementById("name");
+  const passInput = document.getElementById("password");
   const nameValue = nameInput.value;
   const passValue = passInput.value;
 
   const newData = { name: nameValue, password: passValue };
 
   if (!nameValue) {
-    alert('Please enter a name');
+    alert("Please enter a name");
     return;
   } else if (!passValue) {
-    alert('Please enter a password');
+    alert("Please enter a password");
     return;
   } else {
     // Send the data to the server
-    fetch('http://localhost:3000/users', {
-      method: 'POST',
+    fetch("http://localhost:3000/users", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(newData),
     })
       .then((response) => response.json())
       .then((result) => {
-        console.log('Inserted data:', result);
+        console.log("Inserted data:", result);
       })
-      .catch((error) => console.error('Error inserting data:', error));
+      .catch((error) => console.error("Error inserting data:", error));
   }
 
-  document.querySelector('#insertName > button').disabled = false;
+  document.querySelector("#insertName > button").disabled = false;
 }
 
 /* fetch('http://localhost:3000/data/users', {
@@ -160,14 +160,14 @@ async function loginUser(e) {
 } */
 
 function openProfile() {
-  if (document.getElementById('profile').className === 'profile')
-    document.getElementById('profile').className = 'openProfile';
-  else document.getElementById('profile').classList = 'profile';
+  if (document.getElementById("profile").className === "profile")
+    document.getElementById("profile").className = "openProfile";
+  else document.getElementById("profile").classList = "profile";
 }
 function openNav() {
-  if (document.getElementById('sideNav').className === 'sideNav')
-    document.getElementById('sideNav').className = 'open';
-  else document.getElementById('sideNav').classList = 'sideNav';
+  if (document.getElementById("sideNav").className === "sideNav")
+    document.getElementById("sideNav").className = "open";
+  else document.getElementById("sideNav").classList = "sideNav";
 }
 
 // const data = fetch()
