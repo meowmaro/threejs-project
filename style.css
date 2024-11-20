@@ -156,6 +156,7 @@ body {
   border: 3px rgb(141, 104, 177);
 }
 .submit {
+  cursor: pointer;
   width: 80%;
   height: 35px;
   background-color: rgb(80, 43, 108);
@@ -196,6 +197,7 @@ body {
   scale: 2;
 }
 .gameCard {
+  cursor: pointer;
   width: 100%;
   margin-top: 20px;
   background-color: rgb(80, 43, 108);

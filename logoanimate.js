@@ -44,9 +44,11 @@ loader.load("./model/controller.gltf", (loadedGltf) => {
   function animate() {
     requestAnimationFrame(animate);
 
-    const shakeAmount = 2;
-    const shakeSpeed = 0.004;
+    const shakeAmount = 1.5;
+    const shakeSpeed = 0.003;
     gltf.scene.position.x = Math.sin(Date.now() * shakeSpeed) * shakeAmount;
+    gltf.scene.position.y = Math.sin(Date.now() * shakeSpeed) * shakeAmount;
+    scene.scale.set(1, 1, 1.4);
     gltf.scene.rotation.x = THREE.MathUtils.degToRad(88);
     camera.lookAt(gltf.scene.position);
     renderer.render(scene, camera);
