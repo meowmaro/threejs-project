@@ -1,4 +1,4 @@
-const gltfLoader = new THREE.GLTFLoader();
+const apiUrl = process.env.API_URL || 'http://localhost:3000/data/users';
 
 const myDiv = document.getElementById('myDiv');
 const canvas = document.createElement('canvas');
@@ -97,7 +97,7 @@ function insertName(event) {
 /* fetch('http://localhost:3000/data/users', {
   method: 'GET',
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
 })
   .then((response) => response.json())
