@@ -57,8 +57,16 @@ app.post('/data/users', (req, res) => {
   collection
     .insertOne({ name: newData.name, password: newData.password })
     .then((result) => {
-      console.log('Added user:', result);
-      res.json(result);
+      // Custom response format
+      const response = {
+        success: true,
+        userId: result.insertedId,
+        name: newData.name,
+        message: 'User added successfully',
+      };
+
+      console.log('Added user:', response);
+      res.json(response);
     })
     .catch((err) => {
       console.log('Error signing up:', err);
