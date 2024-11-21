@@ -36,3 +36,34 @@ async function loginUser(e) {
     console.error(error);
   }
 }
+
+document.getElementById('insertName').addEventListener('submit', insertName);
+
+function insertName() {
+  event.preventDefault();
+
+  const nameInput = document.getElementById('name');
+  const passwordInput = document.getElementById('pass');
+
+  const nameValue = nameInput.value;
+  const passwordValue = passwordInput.value;
+
+  if (!nameValue || !passwordValue) {
+    alert('Please enter both name and password');
+  } else {
+    fetch('http://localhost:3000/data/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name: nameValue, password: passwordValue }),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        console.log('Inserted', result);
+        localStorage.setItem('userId', result.insertedId);
+        window.location.href = 'index.html';
+      })
+      .catch((err) => console.log('Error:', err));
+  }
+}

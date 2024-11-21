@@ -46,7 +46,7 @@ app.post('/data/login', (req, res) => {
       res.status(500).json({ error: 'Failed' });
     });
 });
-//hi
+
 // sign up
 app.post('/data/users', (req, res) => {
   const collection = db.collection('users');

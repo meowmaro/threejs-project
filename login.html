@@ -12,24 +12,51 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="mainContainer">
-      <div class="loginCard">
-        <h1>Login</h1>
-        <form class="loginCardForm" id="loginForm">
-          <input
-            class="btn input"
-            type="text"
-            id="username"
-            placeholder="username"
-          />
-          <input
-            class="btn input"
-            type="password"
-            id="password"
-            placeholder="password"
-          />
-          <input class="btn input" type="submit" value="log in " />
-        </form>
+    <div class="container">
+      <div class="loginSpace">
+        <div class="loginCard">
+          <h1>Login</h1>
+          <form class="loginCardForm" id="loginForm">
+            <input
+              class="btn input"
+              type="text"
+              id="username"
+              placeholder="username"
+            />
+            <input
+              class="btn input"
+              type="password"
+              id="password"
+              placeholder="password"
+            />
+            <input class="btn input" type="submit" value="log in " />
+          </form>
+        </div>
+      </div>
+      <div class="signupSpace">
+        <div class="loginCard">
+          <h1>sign up</h1>
+          <form class="loginCardForm" id="insertName">
+            <input
+              class="btn input"
+              type="text"
+              id="name"
+              placeholder="username"
+            />
+            <input
+              class="btn input"
+              type="password"
+              id="pass"
+              placeholder="password"
+            />
+            <input
+              onclick="insertName()"
+              class="btn input"
+              type="submit"
+              value="Sign Up "
+            />
+          </form>
+        </div>
       </div>
     </div>
   </body>
