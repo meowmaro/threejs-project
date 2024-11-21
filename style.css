@@ -163,7 +163,7 @@ body {
   color: white;
   font-size: large;
   border: 0;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 .submit:hover {
   scale: 1.1;
