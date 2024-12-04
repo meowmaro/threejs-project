@@ -55,35 +55,32 @@ loader.load('./model/controller.gltf', (loadedGltf) => {
   animate();
 });
 
-document.getElementById('insertName').addEventListener('submit', insertName);
-
-function insertName() {
-  event.preventDefault();
-
-  const nameInput = document.getElementById('name');
-  const passwordInput = document.getElementById('password');
-
-  const nameValue = nameInput.value;
-  const passwordValue = passwordInput.value;
-
-  if (!nameValue || !passwordValue) {
-    alert('Please enter both name and password');
-  } else {
-    fetch('http://localhost:3000/data/users', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ name: nameValue, password: passwordValue }),
-    })
-      .then((response) => response.json())
-      .then((result) => {
-        console.log('Inserted', result);
-        localStorage.setItem('userId', result.insertedId);
-      })
-      .catch((err) => console.log('Error:', err));
-  }
+function openProfile() {
+  if (document.getElementById('profile').className === 'profile')
+    document.getElementById('profile').className = 'openProfile';
+  else document.getElementById('profile').classList = 'profile';
 }
+function openNav() {
+  if (document.getElementById('sideNav').className === 'sideNav')
+    document.getElementById('sideNav').className = 'open';
+  else document.getElementById('sideNav').classList = 'sideNav';
+}
+function logout() {
+  localStorage.removeItem('token');
+  localStorage.removeItem('userID');
+  window.location.href = 'login.html';
+}
+
+// const data = fetch()
+//   .then((result) => result.json())
+//   .catch();
+
+// try {
+//   const res = await fetch();
+//   const data = await res.json();
+// } catch (err) {
+//   console.error(err);
+// }
 
 /* fetch('http://localhost:3000/data/users', {
   method: 'GET',
@@ -98,25 +95,3 @@ function insertName() {
   .catch((error) => {
     console.error('Error:', error);
   }); */
-
-function openProfile() {
-  if (document.getElementById('profile').className === 'profile')
-    document.getElementById('profile').className = 'openProfile';
-  else document.getElementById('profile').classList = 'profile';
-}
-function openNav() {
-  if (document.getElementById('sideNav').className === 'sideNav')
-    document.getElementById('sideNav').className = 'open';
-  else document.getElementById('sideNav').classList = 'sideNav';
-}
-
-// const data = fetch()
-//   .then((result) => result.json())
-//   .catch();
-
-// try {
-//   const res = await fetch();
-//   const data = await res.json();
-// } catch (err) {
-//   console.error(err);
-// }
