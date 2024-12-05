@@ -155,6 +155,7 @@ body {
   color: white;
   border: 3px rgb(141, 104, 177);
 }
+
 .submit {
   cursor: pointer;
   width: 80%;
@@ -265,7 +266,7 @@ body {
 }
 .btn {
   display: flex;
-  width: 100%;
+  width: 110%;
   justify-content: center;
   padding-bottom: 20px;
   max-height: 100%; /* Ensure the button stays within the box */
@@ -366,10 +367,24 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20%;
+  background-color: rgb(77, 56, 96);
+  width: 100%;
+  height: 40vh;
+  min-height: 35vh;
+  border-radius: 25px;
+  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+  margin: 50px;
+}
+.loginCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
   background: linear-gradient(145deg, rgb(60, 40, 90), rgb(50, 30, 70));
   width: 80%;
   height: 50vh;
+  min-height: 35vh;
   border-radius: 25px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 10px 20px rgba(0, 0, 0, 0.2);
   margin: 50px;
@@ -437,18 +452,35 @@ h1 {
 .loginSpace,
 .signupSpace {
   display: flex;
-  width: 20%;
-  height: 60vh;
+  width: 40%;
+  height: 70%;
   justify-content: center;
   align-items: center;
   margin: 30px;
-  flex-direction: column; /* Ensure content stacks vertically */
+  min-height: none;
 }
 .signupSpace {
   display: flex;
-  width: 20%;
-  height: 60vh;
-  justify-content: center;
+  width: 40%;
+  height: 70%;
+  min-height: none;
+}
+.button {
+  width: 100%;
+  transition: 0.3s ease;
+}
+.button:hover {
+  scale: 1.1;
+  transition: 0.3s ease;
+  border: 1px solid white;
+}
+.box3 {
+  display: flex;
+  justify-content: flex-end;
+  gap: 40px;
   align-items: center;
-  max-height: 10%;
+}
+.logoutIco {
+  cursor: pointer;
+  scale: 1.5;
 }
